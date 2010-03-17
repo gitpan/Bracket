@@ -1,5 +1,5 @@
 ---
-abstract: 'National College Basketball tournament bracket application'
+abstract: 'College Basketball Tournament Bracket Web Application'
 author:
   - 'Mateu X. Hunter 2008-2010'
 build_requires:
@@ -46,4 +46,4 @@ requires:
   Time::HiRes: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.98
+version: 0.99

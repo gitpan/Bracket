@@ -1,3 +1,4 @@
+bracket.conf
 Changes
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
@@ -17,7 +18,6 @@ lib/Bracket.pm
 lib/Bracket/Controller/Admin.pm
 lib/Bracket/Controller/Auth.pm
 lib/Bracket/Controller/Final4.pm
-lib/Bracket/Controller/Mail.pm
 lib/Bracket/Controller/Player.pm
 lib/Bracket/Controller/Region.pm
 lib/Bracket/Controller/Root.pm
@@ -44,20 +44,6 @@ MANIFEST			This list of files
 META.yml
 README
 root/admin/links.tt
-root/arxiu/16-team-bracket.html
-root/arxiu/edit_and_view_links.tt
-root/arxiu/home.tt
-root/arxiu/html_head.tt
-root/arxiu/html_head_no_javascript.tt
-root/arxiu/late_edit.tt
-root/arxiu/lower_seeds.tt
-root/arxiu/region2_bracket.tt
-root/arxiu/region_bracket.tt
-root/arxiu/region_view.tt
-root/arxiu/regional_bracket.tt
-root/arxiu/smart_regional_bracket.tt
-root/arxiu/start_html.tt
-root/arxiu/view_region_picks.tt
 root/edit_region_picks.tt
 root/empty.tt
 root/favicon.ico
@@ -99,7 +85,6 @@ root/static/images/btn_88x31_powered_shadow.png
 root/static/images/catalyst_logo.png
 root/static/javascript/bracket_picks.js
 root/static/javascript/final4_picks.js
-root/static/javascript/jquery/jquery-1.4.2.js
 root/static/javascript/jquery/jquery-1.4.2.min.js
 root/static/javascript/json.js
 root/static/javascript/move_pick.js
@@ -119,9 +104,6 @@ t/01app.t
 t/02pod.t
 t/03podcoverage.t
 t/controller_Auth.t
-t/controller_Mail.t
 t/controller_Player.t
 t/controller_Region.t
-t/controller_Round.t
-t/controller_Rounds.t
 t/view_TT.t

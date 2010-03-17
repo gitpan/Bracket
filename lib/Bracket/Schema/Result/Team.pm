@@ -30,7 +30,7 @@ __PACKAGE__->table("team");
 
   data_type: TINYINT
   default_value: undef
-  extra: HASH(0x1b5fe30)
+  extra: HASH(0x249d388)
   is_nullable: 0
   size: 3
 
@@ -48,13 +48,6 @@ __PACKAGE__->table("team");
   is_foreign_key: 1
   is_nullable: 0
   size: 11
-
-=head2 url
-
-  data_type: VARCHAR
-  default_value: undef
-  is_nullable: 0
-  size: 128
 
 =head2 round_out
 
@@ -90,13 +83,6 @@ __PACKAGE__->add_columns(
     is_foreign_key => 1,
     is_nullable => 0,
     size => 11,
-  },
-  "url",
-  {
-    data_type => "VARCHAR",
-    default_value => undef,
-    is_nullable => 0,
-    size => 128,
   },
   "round_out",
   { data_type => "TINYINT", default_value => 7, is_nullable => 0, size => 4 },
@@ -149,8 +135,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-03-15 11:45:32
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:jLxbtRKHu3GZhIADUSBZMQ
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-03-17 12:15:08
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:uFLHHEtHCDiKQkJf0XTrNg
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration
