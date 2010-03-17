@@ -1,17 +1,4 @@
-.includepath
-.project
-bracket.conf
-bracket.db
-bracket_local.conf
 Changes
-data/2008/teams.csv
-data/2009/teams.csv
-data/2010/teams.csv
-data/games.csv
-data/prep_games.pl
-data/prep_teams.pl
-data/team_movement_through_bracket.pl
-data/teams.indexed.csv
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -128,8 +115,6 @@ script/bracket_fastcgi_manage.yml
 script/bracket_server.pl
 script/bracket_test.pl
 script/deploy_bracket.pl
-sql/db_schema.sql
-sql/test_fk.sql
 t/01app.t
 t/02pod.t
 t/03podcoverage.t
