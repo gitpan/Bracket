@@ -3,6 +3,7 @@ package Bracket::Controller::Region;
 use Moose;
 BEGIN { extends 'Catalyst::Controller' }
 use Perl6::Junction qw/ any /;
+use DateTime;
 use Data::Dumper;
 
 my $PERFECT_BRACKET_MODE = 1;
@@ -53,16 +54,7 @@ sub save_picks : Local {
     }
 
     $c->stash->{params} = $params;
-
-    #$c->stash->{template} = 'save_picks.tt';
-    # If we are saving the perfect bracket then update scores
-    #    if ($player_id == 1) {
-    #        $c->detach($c->controller('Admin')->action_for('update_player_points'));
-    #    }
-    #    else {
     $c->response->redirect($c->uri_for($c->controller('Player')->action_for('home')));
-
-    #    }
 
     return;
 }
@@ -135,7 +127,7 @@ sub view : Local {
     $c->stash->{teams}        = $c->model('DBIC::Team')->search(region => $region_id);
     $c->stash->{regions}      = $c->model('DBIC::Region');
     $c->stash->{show_regions} = \@show_regions;
-    $c->stash->{template}     = 'view_region_status.tt';
+    $c->stash->{template}     = 'region/view_region_status.tt';
 
     return;
 }
@@ -145,10 +137,15 @@ sub edit : Local {
 
     # Restrict edits to user or admin role.
     my @user_roles = $c->user->roles;
-    my $truth1     = ($player != $c->user->id);
-    my $truth2     = !(any(@user_roles) eq 'admin');
     $c->go('/error_404') if (($player != $c->user->id) && !('admin' eq any(@user_roles)));
-    warn Dumper "ROLES truth: $truth1 and two: $truth2", @user_roles;
+
+    # Go to home if edits are attempted after closing time
+    if (DateTime->now > edit_cutoff_time()
+        && (!$c->stash->{is_admin}))
+    {
+        $c->flash->{status_msg} = 'Regional edits are closed';
+        $c->response->redirect($c->uri_for($c->controller('Player')->action_for('home')));
+    }
 
     # Player picks
     my @picks = $c->model('DBIC::Pick')->search({ player => $player });
@@ -173,9 +170,23 @@ sub edit : Local {
     # Teams
     $c->stash->{teams} = $c->model('DBIC::Team')->search(region => $region);
 
-    $c->stash->{template} = 'edit_region_picks.tt';
+    $c->stash->{template} = 'region/edit_region_picks.tt';
 
     return;
+}
+
+# This need to be edited in future years to reflect the start date/time.
+sub edit_cutoff_time {
+
+    return DateTime->new(
+        year   => 2010,
+        month  => 3,
+        day    => 18,
+        hour   => 16,
+        minute => 0,
+        second => 0,
+    );
+
 }
 
 =head1 AUTHOR

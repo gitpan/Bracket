@@ -8,6 +8,7 @@
 .container {
 	margin:auto;
 	padding: 0px;
+	max-width: 60em;
 }
 
 table.container {
@@ -29,6 +30,9 @@ td.container {
 table {
 	border-collapse: collapse; 
 }
+#all_player_home {
+	font-size: 1.33em;
+}
 table.all_player_home { 
 	border: none; 
 	font: arial, helvetica, verdana, sans-serif; 
@@ -41,7 +45,7 @@ table.all_player_home {
 
 .all_player_home td { 
 	vertical-align: middle; 
-	border: solid thin #d4d4d4;; 
+	border: solid thin #d4d4d4;
 } 
 
 /* Styles Regional Bracke */
@@ -79,10 +83,6 @@ td p {
 
 .even {}
 
-#all_player_home {
-	font-size: 1.618em;
-}
-
 .user_header {
 	float:right; 
 	clear:right; 
@@ -98,6 +98,11 @@ td p {
 
 td p:hover { background-color:cornsilk;  border: solid 1px black;}
 
+table.regional_bracket {
+	margin-left: 4em;
+	margin-top: 1em;
+	background: white;
+}
 .regional_bracket td { 
 	vertical-align: middle;
 /*	width: 12em; */ 
@@ -153,4 +158,17 @@ table#player_links_table td {
 	border: thin solid grey;
 	max-width: 13em;
 	padding: 3px;
+}
+
+.separator {
+    font-size: 0.72em; 
+    color: gray; 
+    vertical-align: 20%;
+}
+
+h1 {
+	border: thin solid grey;
+	font-size: 1.66em;
+	padding: 3px;
+	background-color: cornsilk;
 }

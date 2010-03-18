@@ -34,6 +34,7 @@ requires:
   DBIx::Class: 0.08120
   DBIx::Class::EncodedColumn: 0
   DBIx::Class::Schema: 0
+  DateTime: 0
   Email::Sender: 0
   Email::Simple: 0
   Email::Valid: 0
@@ -46,4 +47,4 @@ requires:
   Time::HiRes: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.99
+version: 1.00
