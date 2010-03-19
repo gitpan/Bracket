@@ -44,6 +44,7 @@ MANIFEST			This list of files
 META.yml
 README
 root/admin/links.tt
+root/admin/lower_seeds.tt
 root/empty.tt
 root/favicon.ico
 root/final4/bracket.tt
@@ -97,7 +98,11 @@ script/deploy_bracket.pl
 t/01app.t
 t/02pod.t
 t/03podcoverage.t
+t/04context.t
 t/controller_Auth.t
-t/controller_Player.t
 t/controller_Region.t
+t/lib/BracketTestSchema.pm
+t/lib/FakeCatalystObject.pm
+t/var/bracket.db
+t/var/bracket.yml
 t/view_TT.t

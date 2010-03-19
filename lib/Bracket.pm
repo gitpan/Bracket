@@ -1,7 +1,7 @@
 package Bracket;
 use Moose;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 use Catalyst::Runtime '5.80';
 
 use Catalyst qw/
@@ -59,8 +59,8 @@ Bracket - College Basketball Tournament Bracket Web Application
 =head1 DESCRIPTION
 
 College Basketball Tournament Bracket Web application using the Catalyst framework.
-Deploy an instance of this bracket software to run your own bracket.  It requires
-a data store such as MySQL, PostgreSQL or SQLite.
+Deploy an instance of this bracket software to run your own bracket system.
+It requires a data store such as MySQL, PostgreSQL or SQLite.
 
 Simple admin interface to build the perfect bracket as the tournament unfolds.
 Player brackets are compared to the perfect bracket for scoring purposes.
@@ -68,6 +68,7 @@ Player brackets are compared to the perfect bracket for scoring purposes.
 =head1 AUTHOR
 
 Mateu X. Hunter 2008-2010
+hunter@missoula.org
 
 =head1 LICENSE
 
@@ -80,7 +81,9 @@ Mateu X. Hunter 2008
 
 =head1 LIMITATIONS
 
-Currently only supports one group of players.
+* Currently only supports one group of players.
+* If you want to give more scoring weight to lower seeded wins
+  you have to edit the lower_seed column of the game table.
 
 =cut
 
