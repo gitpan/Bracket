@@ -1,7 +1,7 @@
 package Bracket;
 use Moose;
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 use Catalyst::Runtime '5.80';
 
 use Catalyst qw/
@@ -14,35 +14,35 @@ use Catalyst qw/
   /;
 extends 'Catalyst';
 
-
 __PACKAGE__->config(
-	authentication => {
-		default_realm => 'members',
-		realms        => {
-			members => {
-				credential => {
-					class              => 'Password',
-					password_field     => 'password',
-					password_type      => 'self_check',
-				},
-				store => {
-					class                     => 'DBIx::Class',
-					user_model                => 'DBIC::Player',
-					role_relation             => 'roles',
-					role_field                => 'role',
-					use_userdata_from_session => 1,
-				},
-			},
-		}
-	}
+    authentication => {
+        default_realm => 'members',
+        realms        => {
+            members => {
+                credential => {
+                    class          => 'Password',
+                    password_field => 'password',
+                    password_type  => 'self_check',
+                },
+                store => {
+                    class                     => 'DBIx::Class',
+                    user_model                => 'DBIC::Player',
+                    role_relation             => 'roles',
+                    role_field                => 'role',
+                    use_userdata_from_session => 1,
+                },
+            },
+        }
+    }
 );
 
 # Session::Store
 __PACKAGE__->config(
-	'Plugin::Session' => {
-		dbic_class => 'DBIC::Session',
-		expires    => 604800,
-	},
+    'Plugin::Session' => {
+        dbic_class     => 'DBIC::Session',
+        expires        => 604800,
+        cookie_expires => 1814400,
+    },
 );
 
 # Start the application
