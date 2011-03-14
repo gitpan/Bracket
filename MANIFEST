@@ -1,5 +1,6 @@
 bracket.conf
 Changes
+inc/File/Copy/Recursive.pm
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
