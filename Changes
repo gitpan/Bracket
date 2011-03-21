@@ -1,5 +1,15 @@
 College Basketball Bracket System 
 
+1.04    2011 Mars 21
+        Improvements:
+        - Counts of picks made (region and final4)
+        - Counts of correct picks made
+        - Refined Player home page view
+        - /update_player points works fully and fast (new default)
+        - Refined admin links
+        - created is_game_time function to stash cutoff time
+          used in views
+
 1.03    2011 Mars 13
         - 2011 Data loaded.
 

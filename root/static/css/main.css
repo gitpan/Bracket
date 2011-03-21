@@ -9,12 +9,16 @@
 	margin:auto;
 	padding: 0px;
 	max-width: 60em;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 table.container {
 	border: white;
 	borer-collapse: collapse;
 	padding: 0px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 td.container {
 	border: white;
@@ -31,7 +35,7 @@ table {
 	border-collapse: collapse; 
 }
 #all_player_home {
-	font-size: 1.33em;
+	font-size: 1.08em;
 }
 table.all_player_home { 
 	border: none; 
@@ -83,9 +87,27 @@ td p {
 
 .even {}
 
+.tournament_header {
+    float:left; 
+    clear:left;
+    font-size: 0.92em;
+    border:#eee 1px solid;
+    padding: 3px;
+    margin: 0.1em;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
 .user_header {
 	float:right; 
-	clear:right; 
+	clear:right;
+	background:#ffe5cc; 
+    font-size: 0.92em;
+    border:gray 1px solid;
+    padding: 3px;
+    margin: 0.1em;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 .no_border {
@@ -117,28 +139,41 @@ table.regional_bracket {
 }
 #player_page_header {
 	background: #cce0ff;
+	-moz-border-radius: 10px;
+    border-radius: 10px;
+    max-width: 28em;
 }
-table#player_links_table { margin:auto; background-color: white;}
+table#player_links_table { 
+    margin:auto; 
+    background-color: white;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
 table#player_links_table td { 
 	padding: 0.5em; 
-	font-size: 1.2em; 
-	border-right: thin gray solid;
-	border-left: thin gray solid;
-	border-top: thin gray solid;
+	font-size: 1.2em;
+	/* border-right: thin gray solid; */ 
+/*	border-left: thin gray solid; */
+	border-bottom: thin gray solid;
+
 }
 #player_page {
 	margin:auto; 
 	text-align:center; 
-	max-width:30em; 
-	border:gray 1px solid; 
-	background:#ffe5cc; 
+	max-width:27em; 
+/*	background:#ffe5cc; */ 
 	clear:both;
 	font-size: 1.33em;
+	-moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 .admin_links {
 	border: thin gray solid;
 	background-color: #e5ffcc;
+	font-size: 0.92em;
+	-moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 .player_name {
@@ -168,7 +203,17 @@ table#player_links_table td {
 
 h1 {
 	border: thin solid grey;
-	font-size: 1.66em;
+	font-size: 1.33em;
 	padding: 3px;
+	padding-left: 6px;
+	margin-left: 2.2em;
 	background-color: cornsilk;
+	-moz-border-radius: 10px;
+    border-radius: 10px;
+    max-width: 28em;
+}
+
+.region_picks_made {
+    font-size: 0.72em;
+    font-style: italic;
 }

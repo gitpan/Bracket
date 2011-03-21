@@ -135,9 +135,10 @@ sub edit : Local {
     $c->go('/error_404') if (($player != $c->user->id) && !('admin' eq any(@user_roles)));
 
     # Go to home if edits are attempted after closing time
-    if (DateTime->now > edit_cutoff_time()
-        && (!$c->stash->{is_admin}))
-    {
+    # NOTE: Put a player's id on this list and they can make edits after the cut-off.
+    my @open_edit_ids = qw/ /;
+    my $edit_allowed = 1 if ($c->user->id eq any(@open_edit_ids));
+    if ( $c->stash->{is_game_time} && (!($c->stash->{is_admin} || $edit_allowed)) ) {
         $c->flash->{status_msg} = 'Regional edits are closed';
         $c->response->redirect($c->uri_for($c->controller('Player')->action_for('home')));
     }
@@ -163,25 +164,12 @@ sub edit : Local {
     $c->stash->{region_name} = $region_name;
 
     # Teams
-    $c->stash->{teams} = $c->model('DBIC::Team')->search(region => $region);
+    $c->stash->{teams} = $c->model('DBIC::Team')->search({region => $region});
+    
 
     $c->stash->{template} = 'region/edit_region_picks.tt';
 
     return;
-}
-
-# This need to be edited in future years to reflect the start date/time.
-sub edit_cutoff_time {
-
-    return DateTime->new(
-        year   => 2010,
-        month  => 3,
-        day    => 18,
-        hour   => 16,
-        minute => 0,
-        second => 0,
-    );
-
 }
 
 =head1 AUTHOR
