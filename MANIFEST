@@ -98,6 +98,7 @@ script/bracket_fastcgi_manage.yml
 script/bracket_server.pl
 script/bracket_test.pl
 script/deploy_bracket.pl
+script/deploy_new_year_bracket.pl
 t/01app.t
 t/02pod.t
 t/03podcoverage.t
