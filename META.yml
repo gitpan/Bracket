@@ -1,7 +1,7 @@
 ---
 abstract: 'College Basketball Tournament Bracket Web Application'
 author:
-  - 'Mateu X. Hunter 2008-2010'
+  - 'Mateu X. Hunter 2008-2013'
 build_requires:
   ExtUtils::MakeMaker: 6.36
 configure_requires:
@@ -49,4 +49,4 @@ requires:
   Time::HiRes: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.06
+version: 1.07
