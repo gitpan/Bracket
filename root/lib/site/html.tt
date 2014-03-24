@@ -4,14 +4,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<title>[% page_title or template.title or site.title %]</title>
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+<title>[% page_head_title or page_title or template.title or site.title %] : Bracket [% c.config.year %]</title>
 [%- INCLUDE lib/site/javascripts.tt -%]
 [%- INCLUDE lib/site/style_sheets.tt -%]
 </head>
 
 <body[% body_attributes %]>
 <div id="body">
-[% INCLUDE lib/site/user_header.tt %]
+<header>
+  <h1 class="logo"><a href="">Bracket 2014</a></h1>
+  <a class="to_nav" href="#primary_nav">Menu</a>
+</header>
 
 <span class="message">[% status_msg || c.flash.status_msg %]</span>
 <span class="error">[% error_msg %]</span>
@@ -20,6 +24,20 @@
 [%- content -%]
 </div>
 
+[% IF c.user_exists %]
+<nav id="primary_nav">
+     <ul>
+         <li><a href="[% c.uri_for('/all') %]">Leader Board</a></li>
+         <li><a href="[% c.uri_for('/') %]">Home</a></li>
+         <li><a href="[% c.uri_for('/account') %]">Account</a></li>
+     </ul>
+ </nav>
+ [% END %]
+ 
+<footer>
+    <p></p>
+</footer>
 </div>
+
 </body>
 </html>
