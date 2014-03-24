@@ -74,6 +74,8 @@ root/player/home.tt
 root/region/edit_region_picks.tt
 root/region/view_region_status.tt
 root/static/css/main.css
+root/static/css/reset.css
+root/static/css/responsable.css
 root/static/images/btn_120x50_built.png
 root/static/images/btn_120x50_built_shadow.png
 root/static/images/btn_120x50_powered.png
