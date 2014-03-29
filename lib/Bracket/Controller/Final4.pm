@@ -112,7 +112,10 @@ sub save_picks : Local {
         }
     }
     $c->stash->{params} = $params;
-    $c->response->redirect($c->uri_for($c->controller('Player')->action_for('home')));
+    $c->response->redirect(
+        $c->uri_for($c->controller('Player')->action_for('home'))
+        . "/${player_id}"
+    );
 
     return;
 }
@@ -154,12 +157,6 @@ sub view : Local {
         }
         else {
             if ($player_pick->game->round >= $player_pick->pick->round_out) {
-
-                #if ($player_pick->game == 63) {
-                warn "round: " . $player_pick->game->round . "\n";
-                warn "round_out: " . $player_pick->pick->round_out . "\n";
-
-                #}
                 $class_for{ $player_pick->game->id } = 'out';
             }
             else {

@@ -64,7 +64,6 @@ root/lib/site/html.tt
 root/lib/site/javascripts.tt
 root/lib/site/logout.tt
 root/lib/site/style_sheets.tt
-root/lib/site/user_header.tt
 root/lib/site/wrapper.tt
 root/nav/edit_view_links.tt
 root/page_not_found.tt
@@ -87,7 +86,6 @@ root/static/images/btn_88x31_powered_shadow.png
 root/static/images/catalyst_logo.png
 root/static/javascript/bracket_picks.js
 root/static/javascript/final4_picks.js
-root/static/javascript/jquery/jquery-1.4.2.min.js
 root/static/javascript/json.js
 root/static/javascript/move_pick.js
 root/util/dump.tt
